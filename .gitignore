@@ -1,10 +1,11 @@
 .env
+.oracle_forge/
 venv/
 __pycache__/
 .pytest_cache/
-.oracle_forge/*.db
 sandbox.db
 *.pyc
 *.pyo
 *.log
-
+node_modules/
+.vscode/
