@@ -35,3 +35,17 @@ Notes:
 - q2 (`timestamp: 20260412_000838`): output `PA, 3.68`; validator reason `Number near 'PA' does not match ≈3.699395770392749`.
 - q3 (latest rerun): validator reason `Number 35 not found in LLM output.`
 - q6 (`timestamp: 20260412_000840`): output includes `Coffee House Too Cafe` but categories resolve to `Unknown`; validator reason `Missing category: restaurants`.
+
+## 2026-04-13
+Run type: Remote DAB rerun after branch sync and cleanup
+Command:
+- `python run_benchmark_query.py --dataset yelp --query-id 2 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 3 --validate-answer`
+- `python run_benchmark_query.py --dataset yelp --query-id 6 --validate-answer`
+Dataset scope: `yelp` queries 2, 3, 6
+Trials: 1 per query
+Score: `2/3` pass (`is_valid: true` for q3 and q6)
+Notes:
+- q2: output `PA, 3.76`; validator reason `Number near 'PA' does not match ≈3.699395770392749`.
+- q3 (`timestamp: 20260413_065351`): validator `is_valid: true`; reason `Found number: 35`.
+- q6 (`timestamp: 20260413_065358`): validator `is_valid: true`; reason `Name and all categories are present.`
