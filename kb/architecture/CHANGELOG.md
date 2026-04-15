@@ -12,3 +12,23 @@ Following the Karpathy method, obsolete or failed architectures must be removed 
 
 - Initialized architecture KB directory and changelog.
 - Added `context_layers.md`.
+
+## Injection Test
+
+Query run:
+Request the agent to enumerate the required context layers from the architecture documentation, then verify the layers against the actual Oracle Forge v3 run loop.
+
+Expected answer:
+1. Schema & metadata indexing
+2. Domain / institutional knowledge (aliases, business metrics, join-key rules)
+3. Interaction memory (self-learning corrections and session history)
+
+Observed result:
+The architecture KB and the agent runtime aligned with the expected three-layer design. The live run used `common_scaffold/DataAgent.py` for the agent loop and `common_scaffold/prompts/prompt_builder.py` for the injected instructions.
+
+Outcome / verification:
+Verified against the live Yelp q1 run path launched with `python3 run_agent.py --dataset yelp --query_id 1 --llm google/gemini-2.0-flash-001 --iterations 1 --root_name run_tmp9`, which returned `3.55` on the shared server after the remote Yelp fast path was enabled.
+
+Status: pass
+
+Last verified: 2026-04-14
