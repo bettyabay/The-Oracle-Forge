@@ -98,29 +98,32 @@ Validate the Oracle Forge benchmark starter query:
 
 ```bash
 cd /shared/DataAgentBench/oracle_forge_v3
-source venv/bin/activate
-python run_benchmark_query.py --dataset yelp --query-id 1 --validate-answer
+source .venv/bin/activate
+python3 run_agent.py --dataset yelp --query_id 1 --llm google/gemini-2.0-flash-001 --iterations 1 --root_name run_tmp
 ```
 
-The run is healthy if the output ends with:
+## 6. Execution Patterns
 
-```text
-"is_valid": true
-```
-
-Validate the shared MCP Toolbox window is running:
-
+### Running the Agent
+To run a specific benchmark query with the official configuration:
 ```bash
-tmux -S /shared/tmux/oracle-forge.sock capture-pane -pt oracle-forge-gpt5:toolbox -S -20
+python3 run_agent.py --dataset yelp --query_id 1 --llm google/gemini-2.0-flash-001
 ```
 
-You should see:
-
-```text
-Server ready to serve!
+### Running the Benchmark Harness
+To run the full validation harness for a specific query:
+```bash
+python3 run_benchmark_query.py --dataset yelp --query-id 1 --validate-answer
 ```
 
-## 6. Important Team Rule
+### Key Parameters
+- `--dataset`: `yelp`, `agnews`, etc.
+- `--query_id`: The specific query number from the dataset.
+- `--llm`: The model string (e.g., `google/gemini-2.0-flash-001` or `gpt-4o`).
+- `--iterations`: Number of tool-use loops (default is 100, use 1-5 for debugging).
+- `--root_name`: The name for the log output folder.
+
+## 7. Important Team Rule
 
 Do not use `exit` inside shared tmux windows unless you intentionally want to close that window.
 
