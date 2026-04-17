@@ -23,10 +23,15 @@ from src.memory.consolidator import Consolidator
 from src.memory.experience_store import ExperienceStore
 from src.memory.knowledge_review import KnowledgeReview
 from src.planning.planner import Planner
+from src.tools.remote_sandbox import RemoteSandboxConfig
 
 
 class Orchestrator:
-    def __init__(self, max_retries: int = 2):
+    def __init__(
+        self,
+        max_retries: int = 2,
+        remote_config: RemoteSandboxConfig | None = None,
+    ):
         self.max_retries = max_retries
 
         self.global_memory = GlobalMemory()
@@ -40,7 +45,7 @@ class Orchestrator:
             experience_store=self.experience_store,
         )
         self.scratchpad_manager = ScratchpadManager()
-        self.router_module = ExecutionRouter()
+        self.router_module = ExecutionRouter(remote_config=remote_config)
         self.validator_module = Validator()
         self.repair_module = RepairLoop()
         self.synthesizer = AnswerSynthesizer()

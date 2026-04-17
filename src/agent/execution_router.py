@@ -14,7 +14,7 @@ from collections import defaultdict
 from typing import Any
 
 from src.dab.remote_dab_adapter import RemoteDABAdapter
-from src.tools.remote_sandbox import RemoteSandboxClient
+from src.tools.remote_sandbox import RemoteSandboxClient, RemoteSandboxConfig
 from src.tools.toolbox_client import ToolboxClient
 from src.tools.transform_tools import aggregate_by_field, extract_rows_with_facts, join_on_normalized_key, run_python_transform
 
@@ -73,8 +73,8 @@ class ExecutionRouter:
         "wyoming": "WY",
     }
 
-    def __init__(self):
-        self.remote_sandbox = RemoteSandboxClient()
+    def __init__(self, remote_config: RemoteSandboxConfig | None = None):
+        self.remote_sandbox = RemoteSandboxClient(remote_config)
         self.remote_dab = RemoteDABAdapter(self.remote_sandbox)
         self.toolbox = ToolboxClient()
 

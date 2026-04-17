@@ -19,12 +19,14 @@ from typing import Any
 DEFAULT_REMOTE_HOST = "trp-gpt5"
 DEFAULT_REMOTE_DAB_PATH = "/shared/DataAgentBench"
 DEFAULT_REMOTE_PYTHON = "/shared/DataAgentBench/oracle_forge_v3/venv/bin/python"
+DEFAULT_REMOTE_CODE_PATH = "/shared/DataAgentBench/oracle_forge_v3"
 
 
 @dataclass(frozen=True)
 class RemoteSandboxConfig:
     host: str = os.getenv("REMOTE_SANDBOX_HOST", DEFAULT_REMOTE_HOST)
     dab_path: str = os.getenv("REMOTE_SANDBOX_DAB_PATH", DEFAULT_REMOTE_DAB_PATH)
+    code_path: str = os.getenv("REMOTE_SANDBOX_CODE_PATH", DEFAULT_REMOTE_CODE_PATH)
     python_executable: str = os.getenv(
         "REMOTE_SANDBOX_PYTHON",
         DEFAULT_REMOTE_PYTHON,
