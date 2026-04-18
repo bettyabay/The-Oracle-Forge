@@ -255,7 +255,7 @@ Scope: BookReview, AGNEWS, DEPS_DEV_V1, GitHub Repos, GEO, MUSIC, PANCANCERATLAS
 Notes:
 - BookReview: all passed
 - AGNEWS: partial, `2/4` passing at `50` trials
-- DEPS_DEV_V1: not passed
+- DEPS_DEV_V1: all passed (`50` trials)
 - GitHub Repos: not passed overall
 - GEO: all passed
 - MUSIC: not passed
