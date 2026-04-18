@@ -458,14 +458,50 @@ The engagement portfolio is tracked in:
 - `signal/engagement_log.md`
 - `signal/week9_singnalcorps_report.md`
 
-### Public-facing outputs
+## Complete Post Registry
 
-The portfolio includes:
+### X (Twitter)
 
-- one Reddit post in `r/LocalLLaMA`
-- two LinkedIn posts
-- two X threads
-- internal Slack updates documenting shipped / stuck / next
+| Date | Author | Link | Topic |
+|---|---|---|---|
+| Apr 14 | Lidya Dagnew | https://x.com/LidyaDagnew/status/2044044847699329443 | 3-layer context engineering, Claude Code architecture, DAB 38% ceiling |
+| Apr 14 | Bethelhem Abay | https://x.com/carinobetty22/status/2044149854306185464 | Oracle Forge architecture — multi-database routing and self-repair loop |
+| Apr 14 | Bethelhem Abay | https://x.com/carinobetty22/status/2044150321446895815 | Context engineering thread — KB layers, DAB 38% ceiling argument |
+| Apr 18 | Bethelhem Abay | https://x.com/carinobetty22/status/2045525170090062203 | Benchmark results — Yelp pass@1=1.0, 7 queries, DAB official validator confirmed |
+
+
+### Discord
+
+| Date | Author | Link | Topic |
+|---|---|---|---|
+| Apr 18 | Bethelhem Abay | https://discord.com/channels/879548962464493619/879548962464493622/1495113031263453304 | Hugging Face Discord — benchmark results, KB layers, join key silent failure mode |
+
+### LinkedIn
+
+| Date | Author | Link | Topic |
+|---|---|---|---|
+| Apr 14 | Eyobed Feleke | https://www.linkedin.com/posts/eyobed-feleke_agenticai-bigdata-aws-activity-7449744022258163712-T131 | Oracle Forge system design — 8-component architecture |
+| Apr 14 | Bethelhem Abay | https://www.linkedin.com/feed/update/urn:li:share:7449902416717742080/ | 38% benchmark ceiling — architecture gap argument, not a model gap |
+| Apr 18 | Bethelhem Abay | https://www.linkedin.com/posts/bethelhem-abay-melaku-618192205_dataagentbench-aiagents-contextengineering-share-7451284760624173056-_12o | Benchmark closure — pass@1=1.0 on Yelp, KB as the unlock |
+
+### Slack (Internal)
+Daily shipped/stuck/next posts in #oracle-forge-gpt5 across all 9 working days (April 8–18).
+Full log: signal/engagement_log.md
+
+---
+## What Is Working
+- External presence active across X, Discord, LinkedIn
+- Both Signal Corps members published articles with technical evidence
+- Community intelligence gathering 
+- Daily Slack cadence maintained across all 9 working days
+- All benchmark claims in posts are traceable to live benchmark runs
+- Benchmark results post published same day as final submission
+
+## What Is Not Working
+- Reddit Week 9 posts blocked — platform access issue
+- Reach metrics not yet available for most posts — monitoring ongoing
+- Cloudflare AI Gateway beta still pending approval
+---
 
 ### Engagement reach summary
 
